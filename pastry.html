@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Butter & Bite Pastry Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #faf7f2;
+      color: #3a3a3a;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #eae2d6;
+      padding: 20px;
+      text-align: center;
+      color: #3a3a3a;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #a3b18a;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      padding: 12px 18px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #6b7d57;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: #f3efe7;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      color: #5a5a5a;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    #appetizers .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card img:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.4;
+      overflow-wrap: break-word;
+      flex-grow: 1;
+    }
+
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eae2d6;
+      margin-top: 40px;
+      color: #3a3a3a;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Butter & Bite Pastry Shop</h1>
+  <p>a cozy and delightful bakery that offers freshly baked pastries made with love</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#appetizers">Appetizers</a>
+  <a href="#main-dishes">Main Dishes</a>
+  <a href="#beverages">Beverages</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+  <h2>Welcome to Butter & Bite</h2>
+  <p>Enjoy freshly baked pastries, warm treats, and a cozy bakery experience made just for you.</p>
+</section>
+
+<section class="container" id="appetizers">
+  <h2 style="text-align:center; margin-bottom:20px;">Appetizers</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="shrimp.jfif" onclick="openLightbox(this.src)" />
+      <h3>Shrimp Guacamole Bites
+</h3>
+      <p>CCrispy bite-sized treats filled with fresh, creamy guacamole and topped with seared shrimp. A perfect mix of crunch, freshness, and savory flavor
+.</p>
+    </div>
+    <div class="card">
+      <img src="pizza.jfif" onclick="openLightbox(this.src)" />
+      <h3>Pizza Bites
+</h3>
+      <p>Small, bite-sized pizzas topped with tomato sauce, melted cheese, tomatoes, olives, and basil. Easy to make and perfect as a tasty snack or appetizer.
+    </div>
+    <div class="card">
+      <img src="tomato.jfif" onclick="openLightbox(this.src)" />
+      <h3>Classic Basil Tomato Bruschetta
+</h3>
+      <p>Toasted bread topped with diced tomatoes, fresh basil, and a rich glaze. A simple yet elegant appetizer with a fresh, tangy flavor..
+.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="main-dishes">
+  <h2 style="text-align:center; margin-bottom:20px;">Main Dishes</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="sweetbbq.jfif" onclick="openLightbox(this.src)" />
+      <h3>Sweet BBQ Chicken
+</h3>
+      <p>This is a yummy plate with sliced grilled chicken glazed in a sweet barbecue sauce. The chicken is served with sweet corn mixed with little pink and yellow flowers and green onion curls for garnish. A thick brown sauce is drizzled in a fun “drip” design on the plate, making it look tasty and pretty..</p>
+    </div>
+
+    <div class="card">
+      <img src="Chicken.jfif" onclick="openLightbox(this.src)" />
+      <h3>Chicken Pinwheel Delight</h3>
+      <p>This is a sliced chicken rolls that are crispy on the outside and have a soft meat filling inside. The chicken is served with roasted veggies like broccoli, cherry tomatoes, carrot curls, and baked onion cups. There's also a smooth, creamy yellow sauce on the side for dipping. It looks tasty and colorful, perfect for a nice meal.
+.</p>
+    </div>
+
+    <div class="card">
+      <img src="creamy.jfif" onclick="openLightbox(this.src)" />
+      <h3>Creamy Lemon Chicken with Pasta & Roasted Potatoes</h3>
+      <p>A delicious plate of creamy lemon chicken, fresh pasta, and crispy roasted potatoes with a perfect mix of flavors and textures..</p>
+    </div>
+
+    <div class="card">
+      <img src="tomato-pasta.jfif" onclick="openLightbox(this.src)" />
+      <h3>Penne Tomato Pasta</h3>
+      <p>It is a simple pasta dish made with penne noodles cooked in a tasty tomato sauce. The pasta is mixed with fresh basil leaves and a sprinkle of cheese, making it yummy and easy to eat..</p>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="beverages">
+  <h2 style="text-align:center; margin-bottom:20px;">Beverages</h2>
+  <div class="grid">
+    
+    <div class="card">
+      <img src="ruby.jfif" onclick="openLightbox(this.src)" />
+      <h3>The Ruby Mist Refresher
+</h3>
+      <p>A sparkling, botanical escape in a glass. This isn't just a drink; it’s a sensory experience designed for golden hour on a patio. It balances the deep, jammy sweetness of sun-ripened strawberries with the sharp, electric zest of fresh lime and cool garden mint..</p>
+    </div>
+
+    <div class="card">
+      <img src="fruit.jfif" onclick="openLightbox(this.src)" />
+      <h3> Fruit Mojito</h3>
+      <p>A refreshing mixed drink made with fresh fruits, mint leaves, ice, and soda. It comes in different flavors like lemon, berries, and orange. It tastes cool, slightly sweet, and fizzy—perfect for hot weather..</p>
+    </div>
+
+    <div class="card">
+      <img src="Tequila.jfif" onclick="openLightbox(this.src)" />
+      <h3>Tequila Sunrise
+</h3>
+      <p>A popular layered drink with orange juice and red syrup (grenadine), creating a sunrise effect. It is sweet, citrusy, and visually attractive with its gradient colors..</p>
+    </div>
+
+    <div class="card">
+      <img src="velvet.jfif" onclick="openLightbox(this.src)" />
+      <h3>Island Velvet
+</h3>
+      <p>A silky tropical beverage that combines creamy sweetness with the bright, fruity taste of pineapple.
+.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="container" id="about">
+  <h2>About Us</h2>
+  <p>Butter & Bite Pastry Shop is dedicated to serving freshly baked goods made with love, perfect for your sweet cravings and cozy moments.</p>
+</section>
+
+<section class="container" id="contact">
+  <h2>Contact Us</h2>
+  <p>📍 Location: Pag-asa ST. Caniogan, Pasig CIty.</p>
+  <p>📞 Phone: 09488477937</p>
+  <p>📧 Email: ekathlenpadayao13@gmail.com</p>
+</section>
+
+<footer>
+  <p>© 2026 Butter & Bite Pastry Shop. All rights reserved.</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" />
+</div>
+
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').style.display = 'flex';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
